@@ -13,6 +13,6 @@ dist/
 build/
 *.egg-info/
 
-cache/*
-!cache/file1.txt
-!cache/file2.txt
+app/cache/*
+!app/cache/file1.txt
+!app/cache/file2.txt

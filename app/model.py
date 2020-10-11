@@ -5,20 +5,20 @@ class Model:
         pass
 
     def update(self, s):
-        if os.path.exists("cache/" + s + ".txt"):
-            curr = int(open("cache/" + s + ".txt","r").read())
+        if os.path.exists("app/cache/" + s + ".txt"):
+            curr = int(open("app/cache/" + s + ".txt","r").read())
 
-            with open("cache/" + s + ".txt","w") as f:
+            with open("app/cache/" + s + ".txt","w") as f:
                 f.write(str(curr+1) + "\n")
 
         else:
-            with open("cache/" + s + ".txt","w") as f:
-                f.write("100\n")
+            with open("app/cache/" + s + ".txt","w") as f:
+                f.write("0\n")
 
     def get_output(self):
         output = ""
         try:
-            for f in os.listdir("cache"):
+            for f in os.listdir("app/cache"):
                 print(f)
                 output += f + "<br>"
             output += "Hello world!"
