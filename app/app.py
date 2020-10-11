@@ -11,7 +11,3 @@ def hello_world():
     print(ip)
     m.update(str(ip))
     return m.get_output()
-
-@app.route('/')
-def hello_world():
-    return "abcde"
