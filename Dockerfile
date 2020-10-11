@@ -1,6 +1,7 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
+FROM ubuntu:20.04
 
-RUN apk --update add bash nano
-ENV STATIC_PATH /app/
 COPY . .
-RUN pip install -r /app/requirements.txt
+RUN apt update
+RUN apt install python3-pip -y
+
+RUN pip3 install -r /requirements.txt
