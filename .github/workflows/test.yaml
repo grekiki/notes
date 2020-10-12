@@ -24,6 +24,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run unit tests
-        run: |
-          pip install coverage
-          coverage run --append -m unittest discover tests
+        run: python tests/test.py
