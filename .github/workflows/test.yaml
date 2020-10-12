@@ -10,11 +10,8 @@ jobs:
     timeout-minutes: 50
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: true
-    - name: Build Docker image
-      run: docker build -t grekiki/webiste .
     - name: Push docker image
       run: |
+        docker build -t grekiki/webiste .
         docker login -u grekiki -p ${{secrets.DOCKER_PASSWORD}}
         docker push grekiki/website
