@@ -17,7 +17,7 @@ jobs:
         docker push grekiki/website
 
   unit_tests:
-    needs: build_release
+    #needs: build_release
     name: unit tests
     runs-on: ubuntu-16.04
     timeout-minutes: 50
