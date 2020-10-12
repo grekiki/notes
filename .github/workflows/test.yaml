@@ -12,6 +12,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Push docker image
       run: |
-        docker build -t grekiki/webiste .
+        docker build -t grekiki/website .
         docker login -u grekiki -p ${{secrets.DOCKER_PASSWORD}}
         docker push grekiki/website
