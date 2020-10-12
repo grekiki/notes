@@ -1,0 +1,18 @@
+name: website tests
+on:
+  push:
+  pull_request:
+
+jobs:
+  build_release:
+    name: build release
+    runs-on: ubuntu-16.04
+    timeout-minutes: 50
+  steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker image
+      run: docker build -t grekiki/webiste .
+    - name: Push docker image
+      run: |
+        docker login -u grekiki -p ${{secrets.DOCKER_PASSWORD}}
+        docker push grekiki/website
