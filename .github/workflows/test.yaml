@@ -22,7 +22,5 @@ jobs:
     timeout-minutes: 50
     steps:
       - uses: actions/checkout@v2
-      - name: Build Docker image
-        run: docker run -p 5000:5000 grekiki/website:latest
       - name: Run unit tests
         run: coverage run --append -m unittest discover tests
